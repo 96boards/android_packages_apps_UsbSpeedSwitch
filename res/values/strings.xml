@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">usb-speed-switch</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="highspeedbutton">High Speed Mode</string>
+    <string name="fullspeedbutton">Full Speed Mode</string>
+</resources>
+
