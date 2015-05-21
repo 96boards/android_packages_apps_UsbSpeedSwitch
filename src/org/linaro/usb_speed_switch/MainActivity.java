@@ -21,8 +21,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         HighSpeedButton = (RadioButton)findViewById(R.id.HighSpeedButton);
         FullSpeedButton = (RadioButton)findViewById(R.id.FullSpeedButton);
-        String state = System.getProperty("usb_speed.switch","full");
-        if (state == "full") {
+        String state = SystemProperties.get("usb_speed.switch","full");
+        Log.d(Tag,"Returned property" + state);
+        if (state.equals("full")) {
             FullSpeedButton.setChecked(true);
         } else {
             HighSpeedButton.setChecked(true);
@@ -51,8 +52,8 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         Log.d(Tag,"OnResume called");
-        String state = System.getProperty("usb_speed.switch","full");
-        if (state == "full") {
+        String state = SystemProperties.get("usb_speed.switch","full");
+        if (state.equals("full")) {
             FullSpeedButton.setChecked(true);
         } else {
             HighSpeedButton.setChecked(true);
